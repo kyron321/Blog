@@ -6,10 +6,7 @@ const Home = () => {
 
   const [name, setName] = useState("mario");
 
-  const handleDelete = (id) => {
-    const newBlogs = blogs.filter((blog) => blog.id !== id);
-    setBlogs(newBlogs);
-  };
+
 
   useEffect(() => {
     fetch("http://localhost:8000/blogs")
@@ -23,7 +20,7 @@ const Home = () => {
 
   return (
     <div className="home">
-      {blogs && <BlogList blogs={blogs} title="All the blogs!" handleDelete={handleDelete} />}
+      {blogs && <BlogList blogs={blogs} title="All the blogs!"/>}
     </div>
   );
 };
